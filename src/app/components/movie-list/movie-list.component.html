@@ -1,0 +1,88 @@
+<router-outlet></router-outlet>
+
+
+
+<div class="container">
+
+  <h1>Comparison Binding Example  </h1>
+ 
+
+</div>
+<hr style="border:1px solid #ccc;" >
+<div class="oneClomun" style="border-right:1px solid #ccc; width:22%; padding:10px; display:inline-block; min-height:280px; height: 100%;">
+      <h3>Movie Name (Event Binding Example) </h3>
+      <hr style="border:1px solid #ccc;" >
+
+      <form>
+      Movie First name:<br>
+      <input type="text" name="firstname" (blur)="inpuBox($event)" value="">
+      <br>
+      Last Last name:<br>
+      <input type="text" name="lastname" (blur)="inpuBox1($event)" value="" >
+      <br><br>
+
+      </form>
+      <input type="submit" value="Submit" (click)="getData()">
+      <input type="submit" value="addfontColor" (click)="fontColor()">
+      <input type="submit" value="removefontColor" (click)="removeColor()">
+      <input type="submit" value="Clear" (click)="clearGetData()">
+
+   
+      <hr style="border:1px solid #ccc;" >
+
+      <p [ngClass]="{'active' : IsClick == true}">{{ movieName}} </p>
+
+      <!-- {{showingContent.Title}} -->
+
+      <!-- <p [ngClass]="{'active' : test == 1}">{{ movieName}} </p> -->
+</div>
+
+<div class="secondClomun" style="border-right:1px solid #ccc; width:22%;  padding:10px; display:inline-block; min-height:280px; vertical-align: top;  height: 100%">
+    <h3>Movie Name (Two Way Binding Example) </h3>
+  <hr style="border:1px solid #ccc;" >
+
+      Movie First name:<br>
+      <input type="text" name="firstname" [(ngModel)]="twoWayDataBindingVariable" value="Mickey">
+      <br>
+      Last Last name:<br>
+      <input type="text" name="lastname" [(ngModel)]="twoWayDataBindingVariable" value="Mouse">
+      <br><br>
+      
+
+      <hr style="border:1px solid #ccc;" >
+
+      <p>{{twoWayDataBindingVariable}}</p>
+</div>
+
+<div class="thirdClomun" style="border-right:1px solid #ccc; width:22%;  padding:10px; display:inline-block; min-height:280px; vertical-align: top;  height: 100%" > 
+    <h3>Movie Name (Propety Binding Example)</h3>
+   
+
+    
+
+      <hr style="border:1px solid #ccc;" >
+
+      <p [innerHtml]="fullName">Ashk Muthu lorem is placement  </p>
+
+      <p [class]="className">Ashk Muthu lorem is placement  </p>
+
+      <img [src]="imagePath"/>
+</div>
+
+<div class="thirdClomun" style="border-right:1px solid #ccc; width:22%;  padding:10px; display:inline-block; min-height:280px; vertical-align: top;  height: 100%" > 
+    <h3>Movie Name (String Interpolation Example)</h3>
+    <hr style="border:1px solid #ccc;" >
+
+     
+
+     <h1 [class]="changeClass"> {{ movieName}} </h1>
+     <h1>{{twoWayDataBindingVariable}}</h1>
+</div>
+
+
+<!-- {{outPostData.Title}}
+{{outPostData.Description}} -->
+
+<app-sub-component [inputExamble]="movieName" (outputExamble)="ContentChange($event)"></app-sub-component>
+
+<!-- <app-sub-component [inputExamble]="movieName" (outputExamble)="ContentChange()"></app-sub-component> -->

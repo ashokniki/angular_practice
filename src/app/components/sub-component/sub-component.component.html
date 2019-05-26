@@ -1,0 +1,43 @@
+<hr style="border:1px solid #ccc;" >
+
+<div class="oneClomun" style="border-right:1px solid #ccc; width:45%; padding:10px; display:inline-block; min-height:300px; vertical-align: top; height: 100%;">
+
+    <h3>@input Example </h3>  
+
+    Getting content from parent components : 
+    <input type="submit" value="Submit" (click)=updateContent()>
+
+    <br>
+    <br>
+    <br>
+   
+
+    {{assignMyContent}}
+
+</div>
+
+<div class="oneClomun" style="border-right:1px solid #ccc; width:45%; padding:10px; display:inline-block; min-height:300px; vertical-align: top; height: 100%;">
+
+    <h3>@output Example </h3>  
+
+    Appent  content from child components  to Parents : 
+
+    <input type="submit" value="Submit" (click)=putContent($event)>
+
+
+    Examle :2 
+
+    Appent  content from child components  to Parents : 
+
+    <input type="submit" value="Submit" (click)=putContent1()>
+
+
+    <br>
+    <br>
+    <br>
+   
+
+ 
+
+    
+</div>
